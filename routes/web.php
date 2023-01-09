@@ -15,9 +15,10 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('project-list');
+// });
+Route::get('/', [ProjectController::class,'index']);
 Route::get('projects', [ProjectController::class,'index']);
 Route::get('add-project', [ProjectController::class,'addProject']);
 Route::post('save-project', [ProjectController::class,'saveProject']);
