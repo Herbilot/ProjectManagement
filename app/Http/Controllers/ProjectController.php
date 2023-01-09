@@ -45,9 +45,10 @@ class ProjectController extends Controller
     public function getProjectById($id){
         $data = Project::where('id', '=',$id)->first();
         $phase = Phase::where('project_id', '=',$id)->get();
+        $code = "";
         
         
-        return view('projectById', compact('data', 'phase'));
+        return view('projectById', compact('data', 'phase', 'code'));
     }
 
     public function addPhase($id){
